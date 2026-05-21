@@ -9,8 +9,6 @@ It includes subject-wise experiments, assignments, and practice programs written
 
 -Python Programs
 
--C++ Programs
-
 
 *PURPOSE*
 
