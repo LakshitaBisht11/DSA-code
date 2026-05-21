@@ -2,6 +2,7 @@
 This repository contains my college lab manual programs, practical implementations, and algorithm codes.
 It includes subject-wise experiments, assignments, and practice programs written during coursework and lab sessions.
 
+
 *CONTENT*
 
 -Data Structures & Algorithms
@@ -9,6 +10,7 @@ It includes subject-wise experiments, assignments, and practice programs written
 -Python Programs
 
 -C++ Programs
+
 
 *PURPOSE*
 
@@ -19,6 +21,7 @@ It includes subject-wise experiments, assignments, and practice programs written
 -Store semester-wise practical work
 
 -Easy reference for exams and revisions
+
 
 *LANGUAGE USED*
 
