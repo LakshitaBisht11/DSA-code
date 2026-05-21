@@ -11,7 +11,7 @@ It includes subject-wise experiments, assignments, and practice programs written
 *Purpose*
 
 -Maintain organized lab records
--Practice programming concepts
+-Practice programming concept
 -Store semester-wise practical work
 -Easy reference for exams and revisions
 
