@@ -1,0 +1,52 @@
+INF = 999999
+
+def prims(graph, V):
+
+    selected = [False] * V
+    selected[0] = True
+
+    edges = 0
+    total_cost = 0
+
+    print("Edge : Weight")
+
+    while edges < V - 1:
+
+        minimum = INF
+        x = 0
+        y = 0
+
+        for i in range(V):
+
+            if selected[i]:
+
+                for j in range(V):
+
+                    if (not selected[j]) and graph[i][j]:
+
+                        if minimum > graph[i][j]:
+                            minimum = graph[i][j]
+                            x = i
+                            y = j
+
+        print(x, "-", y, ":", graph[x][y])
+
+        total_cost += graph[x][y]
+        selected[y] = True
+        edges += 1
+
+    print("Minimum Cost =", total_cost)
+
+
+# Input Section
+V = int(input("Enter number of cities(vertices): "))
+
+print("Enter adjacency matrix:")
+
+graph = []
+
+for i in range(V):
+    row = list(map(int, input().split()))
+    graph.append(row)
+
+prims(graph, V)

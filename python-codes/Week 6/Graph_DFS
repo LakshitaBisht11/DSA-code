@@ -1,0 +1,38 @@
+# Check Path Existence using DFS
+
+def dfs(graph, visited, current, destination):
+    
+    if current == destination:
+        return True
+
+    visited[current] = True
+
+    for neighbor in range(len(graph)):
+
+        if graph[current][neighbor] == 1 and not visited[neighbor]:
+
+            if dfs(graph, visited, neighbor, destination):
+                return True
+
+    return False
+
+# Input
+n = int(input("Enter number of vertices: "))
+
+print("Enter adjacency matrix:")
+
+graph = []
+
+for i in range(n):
+    row = list(map(int, input().split()))
+    graph.append(row)
+
+source = int(input("Enter source vertex: "))
+destination = int(input("Enter destination vertex: "))
+
+visited = [False] * n
+
+if dfs(graph, visited, source, destination):
+    print("Path Exists")
+else:
+    print("Path Does Not Exist")

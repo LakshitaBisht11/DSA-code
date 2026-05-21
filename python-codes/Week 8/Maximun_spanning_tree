@@ -1,0 +1,65 @@
+parent = []
+
+# Find parent
+def find(i):
+    while parent[i] != i:
+        i = parent[i]
+    return i
+
+# Union operation
+def union(i, j):
+    a = find(i)
+    b = find(j)
+    parent[a] = b
+
+def maximum_spanning_tree(graph, V):
+
+    edges = []
+
+    # Store all edges
+    for i in range(V):
+        for j in range(i + 1, V):
+
+            if graph[i][j] != 0:
+                edges.append((graph[i][j], i, j))
+
+    # Sort in descending order
+    edges.sort(reverse=True)
+
+    for i in range(V):
+        parent.append(i)
+
+    edge_count = 0
+    total_cost = 0
+
+    print("Selected Edges:")
+
+    for weight, u, v in edges:
+
+        if edge_count == V - 1:
+            break
+
+        if find(u) != find(v):
+
+            union(u, v)
+
+            print(u, "-", v, ":", weight)
+
+            total_cost += weight
+            edge_count += 1
+
+    print("Maximum Budget =", total_cost)
+
+
+# Input Section
+V = int(input("Enter number of vertices: "))
+
+print("Enter adjacency matrix:")
+
+graph = []
+
+for i in range(V):
+    row = list(map(int, input().split()))
+    graph.append(row)
+
+maximum_spanning_tree(graph, V)

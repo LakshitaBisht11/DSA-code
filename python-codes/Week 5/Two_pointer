@@ -1,0 +1,33 @@
+# Find common elements in two sorted arrays
+
+m = int(input("Enter size of first array: "))
+
+arr1 = list(map(int, input("Enter first sorted array: ").split()))
+
+n = int(input("Enter size of second array: "))
+
+arr2 = list(map(int, input("Enter second sorted array: ").split()))
+
+i = 0
+j = 0
+
+common = []
+
+while i < m and j < n:
+
+    if arr1[i] == arr2[j]:
+
+        common.append(arr1[i])
+
+        i += 1
+        j += 1
+
+    elif arr1[i] < arr2[j]:
+
+        i += 1
+
+    else:
+
+        j += 1
+
+print("Common Elements:", common)

@@ -1,0 +1,19 @@
+# Find Kth Smallest and Largest Element
+
+T = int(input("Enter number of test cases: "))
+
+for t in range(T):
+
+    n = int(input("Enter size of array: "))
+
+    arr = list(map(int, input("Enter array elements: ").split()))
+
+    K = int(input("Enter value of K: "))
+
+    arr.sort()
+
+    kth_smallest = arr[K - 1]
+    kth_largest = arr[n - K]
+
+    print("Kth Smallest Element =", kth_smallest)
+    print("Kth Largest Element =", kth_largest)

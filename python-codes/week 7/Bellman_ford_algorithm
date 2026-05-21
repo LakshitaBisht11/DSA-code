@@ -1,0 +1,40 @@
+INF = 999999
+
+def bellman_ford(graph, V, src):
+    dist = [INF] * V
+    dist[src] = 0
+
+    # Relax all edges V-1 times
+    for i in range(V - 1):
+        for u in range(V):
+            for v in range(V):
+                if graph[u][v] != 0:
+                    if dist[u] != INF and dist[u] + graph[u][v] < dist[v]:
+                        dist[v] = dist[u] + graph[u][v]
+
+    # Check for negative weight cycle
+    for u in range(V):
+        for v in range(V):
+            if graph[u][v] != 0:
+                if dist[u] != INF and dist[u] + graph[u][v] < dist[v]:
+                    print("Graph contains negative weight cycle")
+                    return
+
+    print("Vertex Distance from Source")
+    for i in range(V):
+        print(i, "\t\t", dist[i])
+
+
+# Input section
+V = int(input("Enter number of vertices: "))
+
+print("Enter adjacency matrix:")
+graph = []
+
+for i in range(V):
+    row = list(map(int, input().split()))
+    graph.append(row)
+
+src = int(input("Enter source vertex: "))
+
+bellman_ford(graph, V, src)

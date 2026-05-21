@@ -1,0 +1,84 @@
+# Dijkstra Algorithm for Shortest Path
+
+INF = 999999
+
+# Function to print path
+def print_path(parent, j):
+
+    if parent[j] == -1:
+        print(j, end=" ")
+        return
+
+    print_path(parent, parent[j])
+
+    print(j, end=" ")
+
+
+# Dijkstra Function
+def dijkstra(graph, n, src):
+
+    dist = [INF] * n
+    visited = [False] * n
+    parent = [-1] * n
+
+    dist[src] = 0
+
+    for _ in range(n):
+
+        # Find minimum distance vertex
+        min_dist = INF
+        u = -1
+
+        for i in range(n):
+
+            if not visited[i] and dist[i] < min_dist:
+
+                min_dist = dist[i]
+                u = i
+
+        visited[u] = True
+
+        # Update adjacent vertices
+        for v in range(n):
+
+            if (graph[u][v] > 0 and
+                not visited[v] and
+                dist[u] + graph[u][v] < dist[v]):
+
+                dist[v] = dist[u] + graph[u][v]
+
+                parent[v] = u
+
+    # Print results
+    print("\nShortest Paths from Source Vertex", src)
+
+    for i in range(n):
+
+        if i != src:
+
+            print("\nDestination:", i)
+
+            print("Distance =", dist[i])
+
+            print("Path =", end=" ")
+
+            print_path(parent, i)
+
+            print()
+
+
+# Input
+n = int(input("Enter number of vertices: "))
+
+print("Enter adjacency matrix:")
+
+graph = []
+
+for i in range(n):
+
+    row = list(map(int, input().split()))
+
+    graph.append(row)
+
+source = int(input("Enter source vertex (Akshay's house): "))
+dijkstra(graph, n, source)

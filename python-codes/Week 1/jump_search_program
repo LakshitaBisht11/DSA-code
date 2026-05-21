@@ -1,0 +1,33 @@
+# Jump Search Program
+arr = list(map(int, input("Enter sorted array elements: ").split()))
+key = int(input("Enter key element: "))
+
+n = len(arr)
+comparisons = 0
+
+step = 1
+prev = 0
+
+while step < n and arr[step] < key:
+    comparisons += 1
+    prev = step
+    step *= 2
+
+if step >= n:
+    step = n - 1
+
+found = False
+
+for i in range(prev, step + 1):
+    comparisons += 1
+
+    if arr[i] == key:
+        found = True
+        break
+
+if found:
+    print("Key Found")
+else:
+    print("Key Not Found")
+
+print("Total Comparisons =", comparisons)

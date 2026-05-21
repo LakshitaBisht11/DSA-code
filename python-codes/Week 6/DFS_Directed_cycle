@@ -1,0 +1,60 @@
+# Detect Cycle in Directed Graph using DFS
+
+def dfs(graph, node, visited, recStack, n):
+
+    visited[node] = True
+    recStack[node] = True
+
+    for neighbor in range(n):
+
+        if graph[node][neighbor] == 1:
+
+            if not visited[neighbor]:
+
+                if dfs(graph, neighbor, visited, recStack, n):
+                    return True
+
+            elif recStack[neighbor]:
+                return True
+
+    recStack[node] = False
+
+    return False
+
+
+def has_cycle(graph, n):
+
+    visited = [False] * n
+    recStack = [False] * n
+
+    for node in range(n):
+
+        if not visited[node]:
+
+            if dfs(graph, node, visited, recStack, n):
+                return True
+
+    return False
+
+
+# Input
+n = int(input("Enter number of vertices: "))
+
+print("Enter adjacency matrix:")
+
+graph = []
+
+for i in range(n):
+
+    row = list(map(int, input().split()))
+
+    graph.append(row)
+
+# Check cycle
+if has_cycle(graph, n):
+
+    print("Yes Cycle Exists")
+
+else:
+
+    print("No Cycle Exists")

@@ -1,0 +1,36 @@
+# Find two elements whose sum is equal to key
+
+T = int(input("Enter number of test cases: "))
+
+for t in range(T):
+
+    n = int(input("Enter size of array: "))
+
+    arr = list(map(int, input("Enter array elements: ").split()))
+
+    key = int(input("Enter key: "))
+
+    arr.sort()
+
+    i = 0
+    j = n - 1
+
+    found = False
+
+    while i < j:
+
+        s = arr[i] + arr[j]
+
+        if s == key:
+            print("Elements Found:", arr[i], arr[j])
+            found = True
+            break
+
+        elif s < key:
+            i += 1
+
+        else:
+            j -= 1
+
+    if not found:
+        print("No such elements exist")

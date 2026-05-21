@@ -1,0 +1,63 @@
+# Check Bipartite Graph using BFS
+
+from collections import deque
+
+def is_bipartite(graph, n):
+
+    color = [-1] * n
+
+    # Check every component
+    for start in range(n):
+
+        if color[start] == -1:
+
+            queue = deque()
+
+            queue.append(start)
+
+            color[start] = 0
+
+            while queue:
+
+                node = queue.popleft()
+
+                for neighbor in range(n):
+
+                    if graph[node][neighbor] == 1:
+
+                        # If uncolored
+                        if color[neighbor] == -1:
+
+                            color[neighbor] = 1 - color[node]
+
+                            queue.append(neighbor)
+
+                        # Same color found
+                        elif color[neighbor] == color[node]:
+
+                            return False
+
+    return True
+
+
+# Input
+n = int(input("Enter number of vertices: "))
+
+print("Enter adjacency matrix:")
+
+graph = []
+
+for i in range(n):
+
+    row = list(map(int, input().split()))
+
+    graph.append(row)
+
+# Check Bipartite
+if is_bipartite(graph, n):
+
+    print("Yes Bipartite")
+
+else:
+
+    print("Not Bipartite")

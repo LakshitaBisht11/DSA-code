@@ -1,0 +1,15 @@
+# Count pairs with difference equal to K
+
+arr = list(map(int, input("Enter array elements: ").split()))
+K = int(input("Enter value of K: "))
+
+count = 0
+n = len(arr)
+
+for i in range(n):
+    for j in range(i + 1, n):
+
+        if abs(arr[i] - arr[j]) == K:
+            count += 1
+
+print("Number of pairs =", count)

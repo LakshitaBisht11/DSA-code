@@ -1,0 +1,24 @@
+# Find alphabet with maximum occurrences
+
+arr = input("Enter alphabets separated by space: ").split()
+
+count = {}
+
+for ch in arr:
+
+    if ch in count:
+        count[ch] += 1
+    else:
+        count[ch] = 1
+
+max_char = ''
+max_count = 0
+
+for ch in count:
+
+    if count[ch] > max_count:
+        max_count = count[ch]
+        max_char = ch
+
+print("Alphabet with maximum occurrences =", max_char)
+print("Number of occurrences =", max_count)
