@@ -5,17 +5,23 @@ It includes subject-wise experiments, assignments, and practice programs written
 *Contents*
 
 -Data Structures & Algorithms
+
 -Python Programs
+
 -C++ Programs
 
 *Purpose*
 
 -Maintain organized lab records
+
 -Practice programming concept
+
 -Store semester-wise practical work
+
 -Easy reference for exams and revisions
 
 *Languages Used*
 
 -C++
+
 -Python
