@@ -23,6 +23,4 @@ It includes subject-wise experiments, assignments, and practice programs written
 
 *LANGUAGE USED*
 
--C++
-
 -Python
