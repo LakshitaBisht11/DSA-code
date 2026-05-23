@@ -9,7 +9,7 @@
 ## 🎯 About This Repository
 
 This repository contains my **college lab manual programs**, **practical implementations**, and **algorithm codes**.  
-It includes **subject-wise experiments, assignments, and practice programs** written during coursework and lab sessions.
+It includes **weekly subject-wise experiments, assignments, and practice programs** written during coursework and lab sessions.
 
 ---
 
