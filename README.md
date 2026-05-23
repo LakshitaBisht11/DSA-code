@@ -1,7 +1,9 @@
 # 🌟 DSA-Code Repository 🌟
 
 <h3 align="center">
-  📚 College Lab Manual Programs • 💻 Practical Implementations • 🚀 Algorithm Codes
+  📚 College Lab Manual Programs 
+  • 💻 Practical Implementations 
+  • 🚀 Algorithm Codes
 </h3>
 
 ---
